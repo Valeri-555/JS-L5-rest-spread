@@ -1,52 +1,6 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze
 
-// KAHOOT урок 6, перенести
 
-// 1. const user = {
-//     email: 'mango@gmail.com',
-//     age: 20
-// };
-// const { username = "User" } = user;
-// console.log(username); // Помилка
-
-
-// 2. const user = {
-//    email: 'mango@gmail.com',
-//    age: 20,
-//    location: {lat: 10, lon: 20},
-//  };
-// const { location: {lat, lon}} = user;
-// console.log(lat, lon); // 10, 20
-
-    
-// 3. function foo({ username } = {}) {
-//     console.log(username);
-// }
-// foo(); // undefind
-    
-    
-// 4. const values = [10, 3, 17, 84, 12, 6];
-// const min = Math.min(...values); // знайти мінімальне значення
-// console.log(min);  // 3;
-
-
-// 5. const arr1 = [1, 2, 3, 4, 5];
-// const arr2 = [...arr1];
-// console.log(arr1 === arr2); // false
-
-
-// 6. constb profile = {
-//     username: "Mango",
-//     age: 2
-// };
-// const profileUpdate = {
-//     username: "Poly"
-// };
-// const updatedProfile = {
-//     ...profile,
-//     ...profileUpdate
-// };
-// console.log(updatedProfile);
 
  
 
