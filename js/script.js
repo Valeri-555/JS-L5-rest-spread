@@ -131,11 +131,12 @@
 // user['age'] = 28; //ств клюів через квадратні дужки, ключ огортаємо в рядок
 // console.log(user);
 
-
 // user.city = 'Odessa';
 // console.log(user);
 
 
+
+// щоб заборонити якісь зміни в об'єкті
 
 // const user = {
 //     name: 'Test user',
@@ -151,6 +152,9 @@
 // user.skills.html = true;
 // console.log(user);
 
+
+// Видаляємл ключ
+
 // const user = {
 //     name: 'Test user',
 //     skills: {
@@ -164,7 +168,10 @@
 // delete user.city
 // console.log(user);
 
-// Методи об'єкта
+
+
+
+//   *  *  *  *  *    МЕТОДИ ОБ'ЄКТА (це такий же самий ключ, але значення якого являється тіло функції)
 // const user = {
 //     name: 'Artem',
 //     skills: {
@@ -172,9 +179,10 @@
 //         css: true,
 //         react: false
 //     },
-//     sayHello(city) {
+//     sayHello(city) { // для того щоб створити метод об'єкту,прописуємо назву нашого методу(функцію),
+                        // після чого оголошуємо в ній параметр і відкриваємо тіло функції
 //         // console.log(city);
-//         console.log(`Hello my name ${this.name}`);
+//         console.log(`Hello my name ${this.name}`); через this звертаємось до назви обєкту
 //     }
 // }
 
@@ -197,9 +205,10 @@
 
 
 
-// Цикл for...in
+//    *  *  *  *  *  Цикл for...in (завжди перебираємо ключі в об'єкті)
+
 // const testObj = {
-//     name: 'Artem',
+//     name: 'Artem', // власні властивості
 //     skills: {
 //         html: false,
 //         css: true,
@@ -210,12 +219,12 @@
 //     }
 // }
 
-// const user = Object.create(testObj);
-// user.city = 'Lviv'
+// const user = Object.create(testObj); // створюємо обєкт на основі попереднього
+// user.city = 'Lviv'  // спадкові властивості
 // console.log(user);
 
-// for (const key in testObj) {
-//     if (testObj.hasOwnProperty(key)) {
+// for (const key in testObj) {  //в основному за допомого/ циклу for...in перебираємо власні властивості)
+//     if (testObj.hasOwnProperty(key)) { //якщо наш метод має власну властивість
 //         console.log(key, user[key]);
 //     }
 // }
@@ -234,7 +243,7 @@
 //     },
 // }
 
-// const keys = Object.keys(user);
+// const keys = Object.keys(user); данний метод використовуємо для того щоб перебрати власні ключі та значення
 // for(const key of keys){
 //     console.log(key,user[key]);
 // }
@@ -281,6 +290,7 @@
 
 
 // Практика //
+
 // Task - 1
 // Створи функцію яка буде приймати 3 параметри та формувати об'єкт покупки
 // 1 Назва продукту
@@ -311,6 +321,11 @@
 // }
 // console.log(createBasket('pizza', 3, 120));
 // console.log(createBasket('aplle', 13, 1200));
+
+
+
+
+
 
 // Task - 2
 // Створи функцію для ведення статистики комп'ютерного клубу. Функція приймає 1 параметр це об'єкт користувачів де ключ це ім'я користувача, а значення це час оренди у хвилинах.
@@ -347,7 +362,7 @@
 
 // 2 Порахувати вік всіх юзерів у яких є ключ age.
 
-// const friends = [
+// const friends = [  // маємо справу з масвом об'єктів
 //     { name: "Anna", books: ["Bible", "Harry Potter"], age: 21 },
 //     { name: "Bob", books: ["War and peace", "Romeo and Juliet"], age: 26 },
 //     { name: "Alice", books: ["War and peace", "Romeo and Juliet"] },
@@ -382,15 +397,15 @@
 //     books: ["Bible", "Harry Potter"],
 //     age: 21
 // }
-// function getUsers(arr, bookName) {
-//     const userNames = [];
-//     for (const user of arr) {
-//         if (user.books.includes(bookName)) {
+// function getUsers(arr, bookName) { //ств функціюяка буде приймати 2 параметри ( масив об'єктів користувачів, та кнігу яку ми хочемо знайти у користувачів)
+//     const userNames = []; //ств порожній масив змінну для зберігання колекції в масиві
+//     for (const user of arr) {  //якщо ми нічого не змінюємо,  а тільки перебираємо, то використовуємо такий цикл. На кожній ітерації наш юзер буде представлений об'єктом
+//         if (user.books.includes(bookName)) { //метод includes перевіряє чи в масив щось входить.
 //             userNames.push(user.name);
 //         }
 //     }
 
-//     return userNames.join(', ');
+//     return userNames.join(', '); // щоб з масиву повернути рядок
 // }
 // console.log(getUsers(friends, "Harry Potter"));
 
