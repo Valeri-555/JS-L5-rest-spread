@@ -54,16 +54,40 @@
 // console.log(updatedProfile);
 
 
+//  7.  const firstObject = { A: 1, B: 2, };
+//    const secondObject = { A: 3, C: 4 };
+//    const thirdObject = {
+//     A: 5,
+//     ...firstObject,
+//     ...secondObject,
+//     C: 6
+// };
+//     console.log(thirdObject); // {A: 3, B: 2, C: 6}
 
 
+// 8. function foo(a, b, c, ...args) {
+//     console.log(args);
+// }
+// foo(1, 2, 3, 4, 5); // [4,5]
+
+
+// 9. function foo({ a, b, c, ...props }) {
+//     console.log(props);
+// }
+// foo({ a: 1, b: 2, c: 3, d: 4, e; 5 }); // { d: 4, e: 5 }
+
+
+
+
+// *  *  *  *  *  *  *  * ДЕСТРКТУРИЗАЦІЯ МАСИВУ
 
 // const arr = [1, 2, 3, 4, 5];
-// // const first = arr[0];
+// // const first = arr[0]; - довший запис
 // // const second = arr[1];
 // // console.log(second);
 
 
-// const [first, , second, , third] = arr;
+// const [first, , second, , third] = arr; - // коротший запис, але якщо нам потрібен перший і останній, а між ними знах декілька значень, то в const пишемо перше значення first, а всш що потрібно пропустити розділяємл комами, останній пишемо second
 // console.log(first);
 // console.log(second);
 // console.log(third);
@@ -168,13 +192,12 @@
 // console.log('arr',arr);
 
 
-// function foo(...props){//rest
+// function foo(...props){ // rest якщо ми використовуємо три крапочки в параметрах
 
-// }
-// foo(...arr)// spread
-
-
+// } 
+// foo(...arr)//  spread, під час передачі аргументів  (розпаковуємо масив)
 // const arr = [1, 2, 3];
+
 
 // const user = {
 //     name: 'Test name',
@@ -193,6 +216,7 @@
 // }
 // foo('a', 'b', 'c')
 // foo(...arr)
+// foo(...user) // не можна розпіляти об'єкт якщо передавати його як аргумент(потрібна деструктуризація), розділити можна лише масив 
 // foo(...arr)// foo(1, 2, 3)
 
 
@@ -278,8 +302,8 @@
 //     return Number((numericWeight / numericHeight ** 2).toFixed(1));
 // }
 
-// console.log(calcBMI({
-//     weight: '88,3',
+// console.log(calcBMI({ //викликаємо функціємо і передаємо в неї лише один аргумент у вигляді об'єкту {}
+//     weight: '88,3',// тепер підписуємо кожне значення яке передаємо
 //     height: '1.75'
 // }));
 
@@ -293,15 +317,15 @@
 
 
 // function createContact(partialContact) {
-//     return {
-//         id: Math.random(),
-//         createdAt: new Date(),
-//         list: 'default',
-//         ...partialContact
+//     return {  // наша функція повертає новий об'єкт
+//         id: Math.random(), //створюємо ідентифікатор
+//         createdAt: new Date(), // створюємо новий представник клас, який вказує поточну дату, коли було створено
+//         list: 'default', // додаємо ключ list, із значенням 'default', але в тому випадку якщо його не було у початковому об'єкті
+//         ...partialContact // розпилення ставимо останнім, щоб були перебиті попередні значенння
 //     }
 // }
 
-// console.log(
+// console.log( // базові значення
 //     createContact({
 //         name: 'Mango',
 //         email: 'mango@mail.com',
@@ -321,9 +345,9 @@
 // Task - 3 - Операція rest
 // Напиши функцію transformUsername(user) так, щоб вона повертала новий об'єкт із властивістю fullName, замість firstName та lastName.
 
-// function transformUsername({ firstName, lastName, ...props }) {
-//     return {
-//         fullName: `${firstName} ${lastName}`,
+// function transformUsername({ firstName, lastName, ...props }) { //під час того, як отримуємо параметри, деструктуризуємо об'єкт
+//     return { // формуємо новий обєкт
+//         fullName: `${firstName} ${lastName}`,// замінюємо firstName та lastName на fullName, та збираємо в один ою'єкт інші ключі
 //         ...props
 //     }
 // }
