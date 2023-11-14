@@ -1,0 +1,17 @@
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+.title-color {
+    color: red;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 300px;
+}
